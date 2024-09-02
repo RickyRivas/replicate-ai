@@ -1,0 +1,163 @@
+// Core styles for entire app
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+// default theme css vars
+:root {
+    // colors
+    --primary: #E59E6D;
+    --primary-light: #f9f3f3;
+    --secondary: #46643E;
+    --light-grey: rgba(0, 0, 0, .1);
+    --intermediate: #D6D2C4;
+    --tertiary: #E5E1E6;
+    --quaternary: #AFCDD7;
+
+    // text
+    --heading: #1A1A1A;
+    --text: #4E4B66;
+    --link: #3A5133;
+    // shadows
+    --box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    --light-box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    // section backgrounds
+    --bg: #fff;
+    --bg-alternate: #FAF8F7;
+    // header
+    --mainnav-bg: #fff;
+    --mainnav-link: var(--primary);
+    --mainnav-linkbg: var(--primary-light);
+    // padding
+    --padding-sm: 3em 0;
+    --padding-lg: 5em 0;
+    // border
+    --border-radius: .8em;
+    // forms
+    --form-bg: #fff;
+    --form-text: #4E4B66;
+    --form-field: #F7F7F7;
+    --form-borderradius: .2em;
+    --form-bordercolor: #ebebeb;
+    --form-placeholder: rgba(0, 0, 0, .5)
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-size: 16px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    color: var(--text);
+    background-color: var(--bg);
+
+    @media (min-width: 1300px) {
+        font-size: 20px;
+    }
+
+    @media (min-width: 2000px) {
+        font-size: 1vw;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+p {
+    margin: 0 0 1.58em;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+ol,
+ul {
+    padding: 0;
+    margin: 0 0 1.58em 1.6em;
+
+    li {
+        margin-bottom: 1em;
+        font-size: 16px;
+    }
+}
+
+/* ===============================================
+	h family || hfam 
+=============================================== */
+@h2fs: 49;
+@h3fs: 20;
+@h4fs: 21;
+@h5fs: 20;
+@h6fs: 19;
+
+h1,
+h2:not(.title),
+h3:not(.title),
+h4,
+h5,
+h6 {
+    line-height: 1;
+    color: var(--heading);
+    margin: 0 0 (40/@h2fs)*1em;
+    text-rendering: auto;
+    text-transform: capitalize;
+    .bold;
+}
+
+h2:not(.title) {
+    font-size: (@h2fs/20)*1em;
+}
+
+h3:not(.title) {
+    font-size: (@h3fs/20)*1em;
+    color: var(--primary);
+}
+
+h3.title {
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: (@h4fs/20)*1em;
+}
+
+h5 {
+    font-size: (@h5fs/20)*1em;
+}
+
+h6 {
+    font-size: (@h6fs/20)*1em;
+}
+
+// buttons
+
+.btn {
+    display: block;
+    color: #fff;
+    background-color: var(--primary);
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 20px;
+    transition: background-color .33s ease;
+    border: 0;
+    border-radius: 0;
+    text-transform: capitalize;
+
+    &:hover {
+        background-color: var(--secondary);
+    }
+}
